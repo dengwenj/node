@@ -28,3 +28,8 @@ module.exports = {
   sex: '不知'
 }
 console.log(module, 'module')
+
+module.exports = function hh() {
+  console.log('hh');
+  return '也可以不用导出对象'
+}
