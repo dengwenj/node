@@ -33,3 +33,6 @@ module.exports = function hh() {
   console.log('hh');
   return '也可以不用导出对象'
 }
+
+// module.exports = exports 的赋值的操作是在最顶层的
+// 后面再修改 exports = 111 没用的，还是导出的对象
