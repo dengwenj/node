@@ -10,8 +10,8 @@ console.log(path.dirname(filepath)) // 获取文件的父文件夹  /user/dwj
 // console.log(path.basename(filepath)) // 获取文件名 hh.js
 // console.log(path.extname(filepath)) // 获取文件扩展名 .js
 
-const basepath = '/user/dwj'
-const filename = '/gg.js'
+const basepath = './user/dwj'
+const filename = 'gg.js'
 const hhName = 'hh'
 
 // 2 join 路径拼接
