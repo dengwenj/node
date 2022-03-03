@@ -5,6 +5,7 @@ const { createProjectAction } = require('./actions')
 const progarm = new Command()
 
 const createCommands = () => {
+  // dwj create demo
   progarm
     .command('create <project> <other...>')
     .description('创建项目')

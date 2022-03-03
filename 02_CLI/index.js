@@ -33,7 +33,7 @@ progarm.on('--help', () => {
 })
 
 progarm
-  .command('create <project> <other...>')
+  .command('create <project> [other...]') // <> 必传 []可传
   .description('创建项目')
   .action((project, other) => {
     console.log(project, other)
