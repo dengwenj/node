@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 // 读取文件的信息
-const filename = './dwj.txt'
+const filename = './ww.txt'
 
 // 1 同步操作
 // const info = fs.statSync(filename)
@@ -21,6 +21,8 @@ const filename = './dwj.txt'
 // 3 异步操作 promise
 fs.promises.stat(filename).then((res) => {
   console.log(res);
+  console.log(res.isDirectory()) // 是否为 文件夹 false
+  console.log(res.isFile()); // 是否为 文件 true
 }).catch((err) => {
   console.log(err);
 })
