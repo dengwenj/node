@@ -7,4 +7,13 @@
  * 3、npm link
  * 4、dwj 生效
  */
-console.log('hello cli');
+// console.log('hello cli');
+
+const progarm = require('commander')
+
+// 查看版本号
+progarm.version(require('./package.json').version)
+progarm.version(require('./package.json').version, '-v, --version')
+
+progarm.parse(process.argv)
+ 
