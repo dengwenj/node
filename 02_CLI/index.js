@@ -12,6 +12,7 @@
 const { Command } = require('commander')
 
 // const helpOptions = require('./lib/core/help.js')
+// const createCommands = require('./lib/core/create')
 
 const progarm = new Command()
 
@@ -31,8 +32,15 @@ progarm.on('--help', () => {
   console.log('help')
 })
 
+progarm
+  .command('create <project> <other...>')
+  .description('创建项目')
+  .action((project, other) => {
+    console.log(project, other)
+  })
+
 // 解析终端命令
 progarm.parse(process.argv)
  
 console.log(progarm.opts()); // { dest: 'src/components' }
-console.log(progarm.opts().dest); // 这里拿到的就是你命令行输入的参数 dwj -d 后面的东西
+// console.log(progarm.opts().dest); // 这里拿到的就是你命令行输入的参数 dwj -d 后面的东西
