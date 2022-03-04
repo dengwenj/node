@@ -5,7 +5,7 @@ const { reactRepo, vueRepo } = require('../config/repo-config')
 
 const createProjectAction = async (project, other) => {
   // clone 项目
-  await download()
+  await download(reactRepo, project, { clone: true })
   // npm i
   // npm start
   // 打开浏览器
