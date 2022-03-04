@@ -1,13 +1,11 @@
-const { Command } = require('commander')
+const { program } = require('commander')
 
 const { createProjectAction } = require('./actions')
 
-const progarm = new Command()
-
 const createCommands = () => {
   // dwj create demo
-  progarm
-    .command('create <project> <other...>')
+  program
+    .command('create <project> [other...]')
     .description('创建项目')
     .action(createProjectAction)
 }
