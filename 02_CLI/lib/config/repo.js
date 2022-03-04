@@ -1,4 +1,4 @@
-let reactRepo = 'direct:git@github.com:dengwenj/dwj-react-app.git'
+let reactRepo = ''
 let vueRepo = ''
 
 module.exports = {

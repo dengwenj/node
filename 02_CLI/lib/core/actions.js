@@ -15,7 +15,7 @@ const createProjectAction = async (project, other) => {
   // npm start
   commandSpawn(command, ['run', 'start'], { cwd: `./${project}` })
   // 打开浏览器
-  open('localhost:3000/')
+  open('http://localhost:3000/')
 }
  
 module.exports = {
