@@ -24,5 +24,5 @@ createCommands()
 // 解析终端命令
 program.parse(process.argv)
  
-console.log(program.opts()); // { dest: 'src/components' }
+// console.log(program.opts()); // { dest: 'src/components' }
 // console.log(progarm.opts().dest); // 这里拿到的就是你命令行输入的参数 dwj -d 后面的东西
