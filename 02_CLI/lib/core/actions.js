@@ -1,7 +1,7 @@
 const { promisify } = require('util')
 const download = promisify(require('download-git-repo'))
 
-const { reactRepo, vueRepo } = require('../config/repo-config')
+const { reactRepo } = require('../config/repo-config')
 
 const createProjectAction = async (project, other) => {
   // clone 项目
