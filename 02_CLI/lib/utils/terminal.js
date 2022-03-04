@@ -1,5 +1,4 @@
 // 执行终端命令相关代码
-
 const { spawn } = require('child_process')
 
 const commandSpawn = (...args) => {
