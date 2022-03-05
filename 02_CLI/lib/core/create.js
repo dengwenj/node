@@ -12,7 +12,7 @@ const createCommands = () => {
   // dwj addcomponent hello scr/component
   program
     .command('addcomponent <name>')
-    .description('创建组件, 例如: dwj addcomponent hello -d scr/component')
+    .description('创建组件, 例如: dwj addcomponent Hello')
     .action((name) => {
       addComponentAction(name, program.opts().dest || 'src/components')
     })
