@@ -10,6 +10,7 @@ const { compile } = require('../utils/compile')
 const writeToFile = require('../utils/writeToFile')
 
 const createProjectAction = async (project, other) => {
+  console.log('正在为您创建项目中~');
   // clone 项目
   await download(reactRepo, project, { clone: true })
   // npm i
