@@ -17,7 +17,12 @@ const createProjectAction = async (project, other) => {
   // 打开浏览器
   open('http://localhost:3000/')
 }
+
+const createAddComponentAction = (name, dest) => {
+  console.log(name, dest)
+}
  
 module.exports = {
-  createProjectAction
+  createProjectAction,
+  createAddComponentAction
 }
