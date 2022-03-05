@@ -25,9 +25,9 @@ const addComponentAction = async (name, dest) => {
   // 编译 ejs 模板 result
   const res = await compile('component.react.ejs', { name })
   // 将 result 写入到 .jsx 或者 .vue 文件中
-  const componentPath = path.resolve(dest, `${name}.jsx`) 
-  writeToFile(componentPath, res) // 传的路径和内容
-  // 放到对应的文件夹中
+  const componentPath = path.resolve(dest, `${name}.jsx`)
+  writeToFile(dest, componentPath, res) // 传的路径和内容
+  // 放到对应的文件夹中 执行命令就行了 比如：dwj dwj addcomponent Hello
 }
 
 // console.log(path.resolve()); 看你在哪个路径下面执行的
