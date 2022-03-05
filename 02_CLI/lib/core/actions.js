@@ -5,7 +5,8 @@ const open = require('open')
 
 const { reactRepo } = require('../config/repo')
 const { commandSpawn } = require('../utils/terminal')
-
+const { compile } = require('../utils/compile')
+ 
 const createProjectAction = async (project, other) => {
   // clone 项目
   await download(reactRepo, project, { clone: true })
@@ -18,11 +19,15 @@ const createProjectAction = async (project, other) => {
   open('http://localhost:3000/')
 }
 
-const createAddComponentAction = (name, dest) => {
-  console.log(name, dest)
+const addComponentAction = async (name) => {
+  // 编译 ejs 模板 result
+  const res = await compile('component.react.ejs', { name })
+  console.log(res);
+  // 将 result 写入到 .jsx 或者 .vue 文件中
+  // 放到对应的文件夹中
 }
- 
+
 module.exports = {
   createProjectAction,
-  createAddComponentAction
+  addComponentAction
 }

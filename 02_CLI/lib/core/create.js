@@ -1,6 +1,6 @@
 const { program } = require('commander')
 
-const { createProjectAction, createAddComponentAction } = require('./actions')
+const { createProjectAction, addComponentAction } = require('./actions')
 
 const createCommands = () => {
   // dwj create demo
@@ -11,9 +11,9 @@ const createCommands = () => {
   
   // dwj addcomponent hello scr/component
   program
-    .command('addcomponent <name> <dest>')
-    .description('创建组件, 例如: dwj addcomponent hello scr/component')
-    .action(createAddComponentAction)
+    .command('addcomponent <name>')
+    .description('创建组件, 例如: dwj addcomponent hello -d scr/component')
+    .action(addComponentAction)
 }
 
 module.exports = createCommands
