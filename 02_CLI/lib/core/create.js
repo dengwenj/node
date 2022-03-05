@@ -13,7 +13,9 @@ const createCommands = () => {
   program
     .command('addcomponent <name>')
     .description('创建组件, 例如: dwj addcomponent hello -d scr/component')
-    .action(addComponentAction)
+    .action((name) => {
+      addComponentAction(name, program.opts().dest || 'src/components')
+    })
 }
 
 module.exports = createCommands
