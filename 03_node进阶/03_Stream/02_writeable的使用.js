@@ -19,7 +19,7 @@ writeStream.on('open', (err) => {
 })
 
 // writeStream.close()
-writeStream.end('文件关闭')
+writeStream.end('文件写入完')
 
 writeStream.on('finish', () => {
   console.log('文件写完');
