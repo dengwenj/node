@@ -28,7 +28,10 @@ app.post('/login', (req, res, next) => {
 })
 
 app.post('/user', (req, res, next) => {
-  console.log(req.body)
+  console.log(req.body) // { hhh: '2111' }
+  // req.on('data', (data) => {
+  //   console.log(data.toString()); // hhh=2111
+  // })
   res.end('user')
 })
 
