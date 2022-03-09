@@ -18,19 +18,23 @@ const app = new Koa()
 //   ctx.name += 'j'
 // }
 
+// ctx 他们都是同一个 引用一样
 const middleware1 = async (ctx, next) => {
   ctx.name = 'd'
-  await next() // 下面的代码就相当于 ctx 全是更新过的
+  await next() // 下面的代码就相当于 ctx 全是更新过的，有异步要等前面的异步先执行完才拿得到
   ctx.body = ctx.name // dwj
+  console.log(2);
 }
 const middleware2 = async (ctx, next) => {
   ctx.name += 'w'
   await next()
+  console.log(1)
 }
 const middleware3 = (ctx, next) => {
   process.nextTick(() => {
     ctx.name += 'j'
   })
+  console.log(0);
 }
 
 app.use(middleware1)
