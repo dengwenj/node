@@ -1,6 +1,9 @@
 const Koa = require('koa')
+const koaStatic = require('koa-static')
 
 const app = new Koa()
+
+app.use(koaStatic('路径'))
 
 app.use((ctx, next) => {
   console.log(ctx.query)
