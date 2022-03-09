@@ -44,3 +44,21 @@ app.use(middleware3)
 app.listen(8000, () => {
   console.log('启动')
 })
+
+// 类似于这样 洋葱模型
+// function bcx() {
+//   console.log(3);
+// }
+
+// function bar() {
+//   bcx()
+//   console.log(2);
+// }
+
+
+// function foo() {
+//   bar()
+//   console.log(1);
+// }
+
+// foo()
