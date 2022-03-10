@@ -26,4 +26,29 @@ UPDATE `users1` SET `name` = 'jj1', telPhone = '1888882228888' WHERE id = 7;
 
 # decimal(5, 3)，表示数值中共有5位数，其中整数占2位，小数占3位 22.453 精度为5，小数位为3
 
+# 修改 brand_id 关联外键时的 action 
+-- 获取到目前的外键的名称 
+SHOW CREATE TABLE products;
+-- CREATE TABLE `products` (
+--   `id` int NOT NULL AUTO_INCREMENT,
+--   `brand` varchar(20) DEFAULT NULL,
+--   `title` varchar(100) NOT NULL,
+--   `price` double NOT NULL,
+--   `score` decimal(2,1) DEFAULT NULL,
+--   `voteCnt` int DEFAULT NULL,
+--   `url` varchar(100) DEFAULT NULL,
+--   `pid` int DEFAULT NULL,
+--   `brand_id` int DEFAULT NULL,
+--   PRIMARY KEY (`id`),
+--   KEY `brand_id` (`brand_id`),
+--   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
+-- 根据名称将外键删除掉 
+ALTER TABLE products DROP FOREIGN KEY products_ibfk_1;
+
+-- 重新设置 外键  id 修改了 外键 也要修改 关联的 ON UPDATE CASCADE
+ALTER TABLE products ADD FOREIGN KEY (brand_id) REFERENCES brand(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+UPDATE brand SET id = 100 WHERE id = 1;
