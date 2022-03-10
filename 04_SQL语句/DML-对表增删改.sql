@@ -24,4 +24,6 @@ UPDATE `users1` SET `name` = 'hh', telPhone = '53312142';
 UPDATE `users1` SET `name` = 'jj', telPhone = '1888888888' WHERE id = 6;
 UPDATE `users1` SET `name` = 'jj1', telPhone = '1888882228888' WHERE id = 7;
 
+# decimal(5, 3)，表示数值中共有5位数，其中整数占2位，小数占3位 22.453 精度为5，小数位为3
+
 
